@@ -1,0 +1,39 @@
+{
+  "1": {
+    "id": 1,
+    "label": "root",
+    "childrenIds": [
+      "117a6bc2-344d-496f-b06b-2f058a2d50a1",
+      "aac7a94a-6c03-4931-bc04-d1c1ff833e8e",
+      "c863df09-6d91-4063-a518-5e4180822809"
+    ]
+  },
+  "117a6bc2-344d-496f-b06b-2f058a2d50a1": {
+    "id": "117a6bc2-344d-496f-b06b-2f058a2d50a1",
+    "label": "home",
+    "childrenIds": [
+      "e3dbde31-2ab0-4356-b579-c0fabdb36efb",
+      "90fee9ad-a26a-4297-9735-b3b4c8db098f"
+    ]
+  },
+  "aac7a94a-6c03-4931-bc04-d1c1ff833e8e": {
+    "id": "aac7a94a-6c03-4931-bc04-d1c1ff833e8e",
+    "label": "gallery",
+    "childrenIds": []
+  },
+  "c863df09-6d91-4063-a518-5e4180822809": {
+    "id": "c863df09-6d91-4063-a518-5e4180822809",
+    "label": "profile",
+    "childrenIds": []
+  },
+  "e3dbde31-2ab0-4356-b579-c0fabdb36efb": {
+    "id": "e3dbde31-2ab0-4356-b579-c0fabdb36efb",
+    "label": "home~~~",
+    "childrenIds": []
+  },
+  "90fee9ad-a26a-4297-9735-b3b4c8db098f": {
+    "id": "90fee9ad-a26a-4297-9735-b3b4c8db098f",
+    "label": "home 3",
+    "childrenIds": []
+  }
+}

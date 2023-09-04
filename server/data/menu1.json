@@ -1,0 +1,24 @@
+{
+  "1": {
+    "id": 1,
+    "label": "Products",
+    "childrenIds": [2, 3, "a1a29e33-cfca-4868-b54d-ecd714e976a0"]
+  },
+  "2": { "id": 2, "label": "Women" },
+  "3": { "id": 3, "label": "Men" },
+  "bbade702-8afb-4a3d-90cd-cb7f8055b31f": {
+    "id": "bbade702-8afb-4a3d-90cd-cb7f8055b31f",
+    "label": "noy",
+    "childrenIds": []
+  },
+  "1c5694a7-44cb-4b84-a455-fb5ae9a66cc3": {
+    "id": "1c5694a7-44cb-4b84-a455-fb5ae9a66cc3",
+    "label": "daaaai",
+    "childrenIds": []
+  },
+  "a1a29e33-cfca-4868-b54d-ecd714e976a0": {
+    "id": "a1a29e33-cfca-4868-b54d-ecd714e976a0",
+    "label": "loveeeee",
+    "childrenIds": []
+  }
+}
