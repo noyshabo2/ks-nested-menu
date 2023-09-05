@@ -1,27 +1,44 @@
-import React from "react";
-import styled from "styled-components";
+import {useContext} from "react";
+import styled from 'styled-components'
+import * as styles from './styles'
+import MenuActions from './components/MenuActions/MenuActions';
+import {usePopover} from "../../hooks";
+import MenuContext from '../../pages/HomePage/context'
 
-export function Menu({ items }) {
-  console.log("menu", items);
-  return (
-    <ul>
-      {items &&
-        items.map((item) => {
-          return <MenuItem key={item.id} item={item} />;
-        })}
-    </ul>
-  );
-}
+const Arrow = styled.span`${styles.Arrow}`
 
-function MenuItem({ item }) {
-  console.log("menuitem", item);
-  return (
-    <li>
-      {item.label}
-      {item &&
-        item.childrens.map((child) => {
-          return <Menu key={child.id} items={child.childrens} />;
-        })}
-    </li>
-  );
-}
+export const Menu = styled(({className, items}) => {
+    if (!items?.length)
+        return null;
+
+    return (
+        <ul {...{className}}>
+            {items.map((item) => <MenuItem {...{key: item.id, ...item}}/>)}
+        </ul>
+    );
+})`${styles.Menu}`
+
+const MenuItem = styled(({className, id, label, submenu, depth}) => {
+    const {expandedItemIds, setExpandedItemIds} = useContext(MenuContext);
+
+    const {handleClick: handleRightClick, popoverProps} = usePopover();
+    const onClick = () => setExpandedItemIds(prevExpandedItemIds => {
+        if (prevExpandedItemIds.includes(id)) {
+            return prevExpandedItemIds.filter(itemId => itemId !== id);
+        }
+        return [...prevExpandedItemIds, id]
+    })
+
+    const isExpanded = expandedItemIds.includes(id)
+
+    return (
+        <li {...{className}}>
+            <div {...{className: 'label-container', onClick, onContextMenu: handleRightClick}}>
+                <span>{label}</span>
+                {!!submenu?.length && <Arrow {...{isExpanded}}/>}
+            </div>
+            {isExpanded && <Menu items={submenu} depth={depth}/>}
+            {popoverProps.anchorEl && <MenuActions {...{popoverProps, id, label}}/>}
+        </li>
+    );
+})`${styles.MenuItem}`
